@@ -35,7 +35,7 @@ function setting(mode) {
 
 setting('abs');
 
-function setting_date(data, axisX, districts_properties, mode) {
+function setting_date(data_file, axisX, districts_properties, mode) {
 	if (data) {
 		for (i in data['data']) {
 			if (date && (!(date.includes(data['data'][i]['datum'])))) {
@@ -48,7 +48,7 @@ function setting_date(data, axisX, districts_properties, mode) {
 	setting_numbers(data, date, districts_properties, mode);
 }
 
-function setting_numbers(data, axisX, districts_properties, mode) {
+function setting_numbers(data_file, axisX, districts_properties, mode) {
 	for (i in data['data']) {
 		if (districts_lau_codes && (!(districts_lau_codes[1].includes(data['data'][i]['okres_lau_kod'])))) {
 			districts_lau_codes[1].push(data['data'][i]['okres_lau_kod']);			
@@ -90,7 +90,7 @@ function setting_numbers(data, axisX, districts_properties, mode) {
 	graf(data, axisX, districts, mode)
 }
 
-function graf(data, axisX, districts, mode) {
+function graf(data_file, axisX, districts, mode) {
 	var ctx;
 	if (mode == 'rel') {
 		headline = 'Podíl nakažených Covid-19 na 100 000 obyvatel podle okresů ČR';
