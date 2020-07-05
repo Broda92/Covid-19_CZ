@@ -1,0 +1,23 @@
+body {
+	background-color: red;
+}
+
+canvas {	 
+	 background-color: white;
+}
+
+p {
+	font-family: Arial;
+	font-size: 12px;
+	text-align: center;
+	color: white;
+}
+
+a {
+	color: salmon;
+}
+
+div#buttons {
+	padding-top: 5px;
+	text-align: center;
+}

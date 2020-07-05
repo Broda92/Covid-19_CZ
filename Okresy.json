@@ -1,0 +1,697 @@
+﻿{
+    "UI_OKRES": [
+        {
+            "KOD": "3201",
+            "NAZEV": "Benešov",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ0201",
+            "PLATI_OD": "1/16/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3202",
+            "NAZEV": "Beroun",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ0202",
+            "PLATI_OD": "1/9/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3701",
+            "NAZEV": "Blansko",
+            "VUSC_KOD": "116",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0641",
+            "PLATI_OD": "1/24/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3702",
+            "NAZEV": "Brno-město",
+            "VUSC_KOD": "116",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0642",
+            "PLATI_OD": "11/5/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3703",
+            "NAZEV": "Brno-venkov",
+            "VUSC_KOD": "116",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0643",
+            "PLATI_OD": "1/24/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3801",
+            "NAZEV": "Bruntál",
+            "VUSC_KOD": "132",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0801",
+            "PLATI_OD": "3/20/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3704",
+            "NAZEV": "Břeclav",
+            "VUSC_KOD": "116",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0644",
+            "PLATI_OD": "11/19/18 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3402",
+            "NAZEV": "Cheb",
+            "VUSC_KOD": "51",
+            "KRAJ_1960_KOD": "34",
+            "NUTS_LAU": "CZ0411",
+            "PLATI_OD": "12/12/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3503",
+            "NAZEV": "Chomutov",
+            "VUSC_KOD": "60",
+            "KRAJ_1960_KOD": "35",
+            "NUTS_LAU": "CZ0422",
+            "PLATI_OD": "10/27/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3603",
+            "NAZEV": "Chrudim",
+            "VUSC_KOD": "94",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0531",
+            "PLATI_OD": "12/20/18 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3401",
+            "NAZEV": "Domažlice",
+            "VUSC_KOD": "43",
+            "KRAJ_1960_KOD": "34",
+            "NUTS_LAU": "CZ0321",
+            "PLATI_OD": "3/2/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3502",
+            "NAZEV": "Děčín",
+            "VUSC_KOD": "60",
+            "KRAJ_1960_KOD": "35",
+            "NUTS_LAU": "CZ0421",
+            "PLATI_OD": "9/4/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3802",
+            "NAZEV": "Frýdek-Místek",
+            "VUSC_KOD": "132",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0802",
+            "PLATI_OD": "1/24/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3601",
+            "NAZEV": "Havlíčkův Brod",
+            "VUSC_KOD": "108",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0631",
+            "PLATI_OD": "1/10/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3100",
+            "NAZEV": "Hlavní město Praha",
+            "VUSC_KOD": "19",
+            "KRAJ_1960_KOD": "31",
+            "NUTS_LAU": "CZ0100",
+            "PLATI_OD": "12/6/17 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3706",
+            "NAZEV": "Hodonín",
+            "VUSC_KOD": "116",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0645",
+            "PLATI_OD": "12/5/18 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3602",
+            "NAZEV": "Hradec Králové",
+            "VUSC_KOD": "86",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0521",
+            "PLATI_OD": "1/3/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3504",
+            "NAZEV": "Jablonec nad Nisou",
+            "VUSC_KOD": "78",
+            "KRAJ_1960_KOD": "35",
+            "NUTS_LAU": "CZ0512",
+            "PLATI_OD": "1/24/18 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3811",
+            "NAZEV": "Jeseník",
+            "VUSC_KOD": "124",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0711",
+            "PLATI_OD": "5/31/16 0:00",
+            "DATUM_VZNIKU": "1/1/96 0:00"
+        },
+        {
+            "KOD": "3707",
+            "NAZEV": "Jihlava",
+            "VUSC_KOD": "108",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0632",
+            "PLATI_OD": "11/15/17 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3303",
+            "NAZEV": "Jindřichův Hradec",
+            "VUSC_KOD": "35",
+            "KRAJ_1960_KOD": "33",
+            "NUTS_LAU": "CZ0313",
+            "PLATI_OD": "1/9/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3604",
+            "NAZEV": "Jičín",
+            "VUSC_KOD": "86",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0522",
+            "PLATI_OD": "7/10/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3403",
+            "NAZEV": "Karlovy Vary",
+            "VUSC_KOD": "51",
+            "KRAJ_1960_KOD": "34",
+            "NUTS_LAU": "CZ0412",
+            "PLATI_OD": "6/24/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3803",
+            "NAZEV": "Karviná",
+            "VUSC_KOD": "132",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0803",
+            "PLATI_OD": "1/24/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3203",
+            "NAZEV": "Kladno",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ0203",
+            "PLATI_OD": "6/28/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3404",
+            "NAZEV": "Klatovy",
+            "VUSC_KOD": "43",
+            "KRAJ_1960_KOD": "34",
+            "NUTS_LAU": "CZ0322",
+            "PLATI_OD": "10/15/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3204",
+            "NAZEV": "Kolín",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ0204",
+            "PLATI_OD": "8/23/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3708",
+            "NAZEV": "Kroměříž",
+            "VUSC_KOD": "141",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0721",
+            "PLATI_OD": "4/21/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3205",
+            "NAZEV": "Kutná Hora",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ0205",
+            "PLATI_OD": "8/23/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3505",
+            "NAZEV": "Liberec",
+            "VUSC_KOD": "78",
+            "KRAJ_1960_KOD": "35",
+            "NUTS_LAU": "CZ0513",
+            "PLATI_OD": "8/3/17 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3506",
+            "NAZEV": "Litoměřice",
+            "VUSC_KOD": "60",
+            "KRAJ_1960_KOD": "35",
+            "NUTS_LAU": "CZ0423",
+            "PLATI_OD": "9/9/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3507",
+            "NAZEV": "Louny",
+            "VUSC_KOD": "60",
+            "KRAJ_1960_KOD": "35",
+            "NUTS_LAU": "CZ0424",
+            "PLATI_OD": "6/24/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3207",
+            "NAZEV": "Mladá Boleslav",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ0207",
+            "PLATI_OD": "12/6/18 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3508",
+            "NAZEV": "Most",
+            "VUSC_KOD": "60",
+            "KRAJ_1960_KOD": "35",
+            "NUTS_LAU": "CZ0425",
+            "PLATI_OD": "9/1/17 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3206",
+            "NAZEV": "Mělník",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ0206",
+            "PLATI_OD": "6/28/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3804",
+            "NAZEV": "Nový Jičín",
+            "VUSC_KOD": "132",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0804",
+            "PLATI_OD": "12/3/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3208",
+            "NAZEV": "Nymburk",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ0208",
+            "PLATI_OD": "1/3/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3605",
+            "NAZEV": "Náchod",
+            "VUSC_KOD": "86",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0523",
+            "PLATI_OD": "1/18/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3805",
+            "NAZEV": "Olomouc",
+            "VUSC_KOD": "124",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0712",
+            "PLATI_OD": "5/12/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3806",
+            "NAZEV": "Opava",
+            "VUSC_KOD": "132",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0805",
+            "PLATI_OD": "12/3/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3807",
+            "NAZEV": "Ostrava-město",
+            "VUSC_KOD": "132",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0806",
+            "PLATI_OD": "6/1/18 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3606",
+            "NAZEV": "Pardubice",
+            "VUSC_KOD": "94",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0532",
+            "PLATI_OD": "3/15/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3304",
+            "NAZEV": "Pelhřimov",
+            "VUSC_KOD": "108",
+            "KRAJ_1960_KOD": "33",
+            "NUTS_LAU": "CZ0633",
+            "PLATI_OD": "10/1/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3406",
+            "NAZEV": "Plzeň-jih",
+            "VUSC_KOD": "43",
+            "KRAJ_1960_KOD": "34",
+            "NUTS_LAU": "CZ0324",
+            "PLATI_OD": "6/1/18 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3405",
+            "NAZEV": "Plzeň-město",
+            "VUSC_KOD": "43",
+            "KRAJ_1960_KOD": "34",
+            "NUTS_LAU": "CZ0323",
+            "PLATI_OD": "2/5/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3407",
+            "NAZEV": "Plzeň-sever",
+            "VUSC_KOD": "43",
+            "KRAJ_1960_KOD": "34",
+            "NUTS_LAU": "CZ0325",
+            "PLATI_OD": "2/5/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3306",
+            "NAZEV": "Prachatice",
+            "VUSC_KOD": "35",
+            "KRAJ_1960_KOD": "33",
+            "NUTS_LAU": "CZ0315",
+            "PLATI_OD": "3/19/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3209",
+            "NAZEV": "Praha-východ",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ0209",
+            "PLATI_OD": "3/4/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3210",
+            "NAZEV": "Praha-západ",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ020A",
+            "PLATI_OD": "1/9/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3709",
+            "NAZEV": "Prostějov",
+            "VUSC_KOD": "124",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0713",
+            "PLATI_OD": "12/4/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3305",
+            "NAZEV": "Písek",
+            "VUSC_KOD": "35",
+            "KRAJ_1960_KOD": "33",
+            "NUTS_LAU": "CZ0314",
+            "PLATI_OD": "3/25/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3808",
+            "NAZEV": "Přerov",
+            "VUSC_KOD": "124",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0714",
+            "PLATI_OD": "12/3/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3211",
+            "NAZEV": "Příbram",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ020B",
+            "PLATI_OD": "3/25/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3212",
+            "NAZEV": "Rakovník",
+            "VUSC_KOD": "27",
+            "KRAJ_1960_KOD": "32",
+            "NUTS_LAU": "CZ020C",
+            "PLATI_OD": "12/17/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3408",
+            "NAZEV": "Rokycany",
+            "VUSC_KOD": "43",
+            "KRAJ_1960_KOD": "34",
+            "NUTS_LAU": "CZ0326",
+            "PLATI_OD": "3/29/17 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3607",
+            "NAZEV": "Rychnov nad Kněžnou",
+            "VUSC_KOD": "86",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0524",
+            "PLATI_OD": "6/16/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3608",
+            "NAZEV": "Semily",
+            "VUSC_KOD": "78",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0514",
+            "PLATI_OD": "2/7/18 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3409",
+            "NAZEV": "Sokolov",
+            "VUSC_KOD": "51",
+            "KRAJ_1960_KOD": "34",
+            "NUTS_LAU": "CZ0413",
+            "PLATI_OD": "6/28/17 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3307",
+            "NAZEV": "Strakonice",
+            "VUSC_KOD": "35",
+            "KRAJ_1960_KOD": "33",
+            "NUTS_LAU": "CZ0316",
+            "PLATI_OD": "3/19/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3609",
+            "NAZEV": "Svitavy",
+            "VUSC_KOD": "94",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0533",
+            "PLATI_OD": "12/10/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3410",
+            "NAZEV": "Tachov",
+            "VUSC_KOD": "43",
+            "KRAJ_1960_KOD": "34",
+            "NUTS_LAU": "CZ0327",
+            "PLATI_OD": "3/2/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3509",
+            "NAZEV": "Teplice",
+            "VUSC_KOD": "60",
+            "KRAJ_1960_KOD": "35",
+            "NUTS_LAU": "CZ0426",
+            "PLATI_OD": "8/24/17 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3610",
+            "NAZEV": "Trutnov",
+            "VUSC_KOD": "86",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0525",
+            "PLATI_OD": "1/18/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3308",
+            "NAZEV": "Tábor",
+            "VUSC_KOD": "35",
+            "KRAJ_1960_KOD": "33",
+            "NUTS_LAU": "CZ0317",
+            "PLATI_OD": "1/9/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3710",
+            "NAZEV": "Třebíč",
+            "VUSC_KOD": "108",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0634",
+            "PLATI_OD": "6/19/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3711",
+            "NAZEV": "Uherské Hradiště",
+            "VUSC_KOD": "141",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0722",
+            "PLATI_OD": "11/1/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3810",
+            "NAZEV": "Vsetín",
+            "VUSC_KOD": "141",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0723",
+            "PLATI_OD": "11/29/17 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3712",
+            "NAZEV": "Vyškov",
+            "VUSC_KOD": "116",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0646",
+            "PLATI_OD": "12/4/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3705",
+            "NAZEV": "Zlín",
+            "VUSC_KOD": "141",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0724",
+            "PLATI_OD": "4/21/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3713",
+            "NAZEV": "Znojmo",
+            "VUSC_KOD": "116",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0647",
+            "PLATI_OD": "6/19/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3809",
+            "NAZEV": "Šumperk",
+            "VUSC_KOD": "124",
+            "KRAJ_1960_KOD": "38",
+            "NUTS_LAU": "CZ0715",
+            "PLATI_OD": "5/12/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3714",
+            "NAZEV": "Žďár nad Sázavou",
+            "VUSC_KOD": "108",
+            "KRAJ_1960_KOD": "37",
+            "NUTS_LAU": "CZ0635",
+            "PLATI_OD": "1/10/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3501",
+            "NAZEV": "Česká Lípa",
+            "VUSC_KOD": "78",
+            "KRAJ_1960_KOD": "35",
+            "NUTS_LAU": "CZ0511",
+            "PLATI_OD": "5/2/18 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3301",
+            "NAZEV": "České Budějovice",
+            "VUSC_KOD": "35",
+            "KRAJ_1960_KOD": "33",
+            "NUTS_LAU": "CZ0311",
+            "PLATI_OD": "12/5/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3302",
+            "NAZEV": "Český Krumlov",
+            "VUSC_KOD": "35",
+            "KRAJ_1960_KOD": "33",
+            "NUTS_LAU": "CZ0312",
+            "PLATI_OD": "2/13/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3510",
+            "NAZEV": "Ústí nad Labem",
+            "VUSC_KOD": "60",
+            "KRAJ_1960_KOD": "35",
+            "NUTS_LAU": "CZ0427",
+            "PLATI_OD": "9/9/19 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        },
+        {
+            "KOD": "3611",
+            "NAZEV": "Ústí nad Orlicí",
+            "VUSC_KOD": "94",
+            "KRAJ_1960_KOD": "36",
+            "NUTS_LAU": "CZ0534",
+            "PLATI_OD": "6/16/20 0:00",
+            "DATUM_VZNIKU": "4/11/60 0:00"
+        }
+    ]
+}
