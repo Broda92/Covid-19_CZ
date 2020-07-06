@@ -93,9 +93,9 @@ function setting_numbers(data_file, axisX, districts_properties, mode) {
 function graf(data_file, axisX, districts, mode) {
 	var ctx;
 	if (mode == 'rel') {
-		headline = 'Podíl nakažených Covid-19 na 100 000 obyvatel podle okresů ČR';
+		headline = 'Podíl aktivních nakažených Covid-19 na 100 000 obyvatel podle okresů ČR';
 	} else {
-		headline = 'Absolutní počet nakažených Covid-19 podle okresů ČR';
+		headline = 'Počet aktivních nakažených Covid-19 podle okresů ČR';
 	}
 	ctx = document.getElementById('myChart').getContext('2d');
 	var lineChart = new Chart(ctx, {
