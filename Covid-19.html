@@ -4,18 +4,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>Statistika Covid-19</title>
-<script src="Covid-19.js" type="text/javascript"></script>
 <script src="Chart.js/Chart.js" type="text/javascript"></script>
 <script src="moment-with-locales.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="Covid-19.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="Covid-19.css"></style>
 </head>
 
 <body>
-	<canvas id="myChart" width="calc(100%-20px)" height="130px"></canvas>			
-	<div id="buttons">
-		<button onclick="setting('abs')">Absolutní</button>
-		<button onclick="setting('rel')">Relativní na 100 000 obyvatel</button>
-	</div>	
+	<canvas id="myChart" width="calc(100%-20px)" height="130px"></canvas>
+	<br>
+	<canvas id="myChart2" width="calc(100%-20px)" height="130px"></canvas>
 	<p id="tiraz"><b>Autor: Jan BRODSKÝ, Brno 2020. Optimalizováno pro prohlížeč Mozilla Firefox verze 77.x a vyšší</b></p>
 	<p id="zdroj"><b>Zdroje dat: <a href="https://onemocneni-aktualne.mzcr.cz/covid-19">MZČR</a> a <a href="https://www.czso.cz/csu/czso/pocet-obyvatel-v-obcich-za0wri436p">ČSÚ</a>. Vytvořeno s pomocí knihoven <a href="https://www.chartjs.org/">Chart.js</a> a <a href="https://momentjs.com/">Moment.js</a>.</b></p>
 </body>

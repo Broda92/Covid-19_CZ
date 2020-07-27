@@ -5,8 +5,9 @@ var districts_properties = [];
 var axisX;
 var mode;
 var headline;
+var target;
 
-function setting(mode) {
+function setting() {
 	var request = new XMLHttpRequest();
 	request.open('GET', 'https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/kraj-okres-nakazeni-vyleceni-umrti.json');	
 
@@ -29,13 +30,14 @@ function setting(mode) {
 	request2.send();
 
 	setTimeout(function(){
-		setting_date(data, axisX, districts_properties, mode);
+		setting_date(data, axisX, districts_properties, "abs", "myChart");
+		setting_date(data, axisX, districts_properties, "rel", "myChart2");
 	}, 500);
 }
 
-setting('abs');
+setting();
 
-function setting_date(data_file, axisX, districts_properties, mode) {
+function setting_date(data_file, axisX, districts_properties, mode, target) {
 	if (data) {
 		for (i in data['data']) {
 			if (date && (!(date.includes(data['data'][i]['datum'])))) {
@@ -45,10 +47,10 @@ function setting_date(data_file, axisX, districts_properties, mode) {
 	} else {
 		alert("Data se nepodařilo načíst! Prosím, aktualizujte stránku.");
 	}
-	setting_numbers(data, date, districts_properties, mode);
+	setting_numbers(data, date, districts_properties, mode, target);
 }
 
-function setting_numbers(data_file, axisX, districts_properties, mode) {
+function setting_numbers(data_file, axisX, districts_properties, mode, target) {
 	for (i in data['data']) {
 		if (districts_lau_codes && (!(districts_lau_codes[1].includes(data['data'][i]['okres_lau_kod'])))) {
 			districts_lau_codes[1].push(data['data'][i]['okres_lau_kod']);			
@@ -87,17 +89,17 @@ function setting_numbers(data_file, axisX, districts_properties, mode) {
 		}
 		districts.push(district_data);
 	}	
-	graf(data, axisX, districts, mode)
+	graf(data, axisX, districts, mode, target)
 }
 
-function graf(data_file, axisX, districts, mode) {
+function graf(data_file, axisX, districts, mode, target) {
 	var ctx;
 	if (mode == 'rel') {
 		headline = 'Podíl aktivních nakažených Covid-19 na 100 000 obyvatel podle okresů ČR';
 	} else {
 		headline = 'Počet aktivních nakažených Covid-19 podle okresů ČR';
 	}
-	ctx = document.getElementById('myChart').getContext('2d');
+	ctx = document.getElementById(target).getContext('2d');
 	var lineChart = new Chart(ctx, {
 	  type: 'line',
 	  data: {
