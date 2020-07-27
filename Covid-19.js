@@ -1,5 +1,7 @@
 var data;
 var date = [];
+var date3 = [];
+var date5 = [];
 var districts_lau_codes = [[],[],[]];
 var districts_properties = [];
 var axisX;
@@ -18,6 +20,17 @@ function setting() {
 	};
 	request.send();	
 
+	var request3 = new XMLHttpRequest();
+	request3.open('GET','https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/nakazeni-vyleceni-umrti-testy.json');
+
+	request3.onreadystatechange = function() {
+		if (this.readyState === 4) {
+			data_CZ = JSON.parse(this.responseText);
+			data_CZ = data_CZ['data']
+		}
+	}	
+	request3.send();
+
 	var request2 = new XMLHttpRequest();
 	request2.open('GET','CSU_obyv_okresy.json');
 
@@ -30,14 +43,20 @@ function setting() {
 	request2.send();
 
 	setTimeout(function(){
-		setting_date(data, axisX, districts_properties, "abs", "myChart");
-		setting_date(data, axisX, districts_properties, "rel", "myChart2");
+		setting_date1(data, axisX, districts_properties, "abs", "myChart");
+		setting_date1(data, axisX, districts_properties, "rel", "myChart2");
+		setting_date3(data_CZ, axisX);
+		update_date_text();
 	}, 500);
 }
 
 setting();
 
-function setting_date(data_file, axisX, districts_properties, mode, target) {
+function update_date_text() {
+	$("#tiraz").append("Poslední aktualizace: "+moment(data['modified']).locale('cs').format("LLLL"));
+};
+
+function setting_date1(data_file, axisX, districts_properties, mode, target) {
 	if (data) {
 		for (i in data['data']) {
 			if (date && (!(date.includes(data['data'][i]['datum'])))) {
@@ -47,10 +66,10 @@ function setting_date(data_file, axisX, districts_properties, mode, target) {
 	} else {
 		alert("Data se nepodařilo načíst! Prosím, aktualizujte stránku.");
 	}
-	setting_numbers(data, date, districts_properties, mode, target);
+	setting_numbers1(data, date, districts_properties, mode, target);
 }
 
-function setting_numbers(data_file, axisX, districts_properties, mode, target) {
+function setting_numbers1(data_file, axisX, districts_properties, mode, target) {
 	for (i in data['data']) {
 		if (districts_lau_codes && (!(districts_lau_codes[1].includes(data['data'][i]['okres_lau_kod'])))) {
 			districts_lau_codes[1].push(data['data'][i]['okres_lau_kod']);			
@@ -66,6 +85,7 @@ function setting_numbers(data_file, axisX, districts_properties, mode, target) {
 
 	var amount;
 	var percentage;
+	var region_colors = ["red","orange","yellow","green","lime","blue","darkblue","blueviolet","magenta","gray","black","saddlebrown","greenyellow","deepskyblue"]
 	for (i in districts_lau_codes[1]) {
 		var district_numbers = [];
 		for (j in data['data']) {
@@ -80,25 +100,38 @@ function setting_numbers(data_file, axisX, districts_properties, mode, target) {
 				
 			}
 		}	
+		var regions_codes = [];
+		for (c in districts_lau_codes[1]) {
+			if (regions_codes.includes((districts_lau_codes[1][c]).slice(2,5)) == false) {
+				regions_codes.push((districts_lau_codes[1][c]).slice(2,5));
+			}
+		}
+		var region_color;
+		for (r in regions_codes) {
+			if (regions_codes[r] == (districts_lau_codes[1][i]).slice(2,5)) {
+				region_color = region_colors[r];
+			}
+		}
 		var district_data = {
 			label: districts_lau_codes[0][i],
 			data: district_numbers,
 			lineTension: 0,
     		fill: false,
-    		borderColor: 'rgb('+Math.random()*256+', '+Math.random()*256+', '+Math.random()*256+')'
+    		borderColor: region_color
 		}
 		districts.push(district_data);
 	}	
-	graf(data, axisX, districts, mode, target)
+	if (mode == 'rel') {
+		headline = 'Podíl aktivních nakažených Covid-19 na 100 000 obyvatel podle okresů ČR (data doplňována s týdenním zpožděním)';
+	} else {
+		headline = 'Počet aktivních nakažených Covid-19 podle okresů ČR (data doplňována s týdenním zpožděním)';
+	}
+	graf(data, axisX, districts, target, headline);
 }
 
-function graf(data_file, axisX, districts, mode, target) {
+function graf(data_file, axisX, districts, target, headline) {
 	var ctx;
-	if (mode == 'rel') {
-		headline = 'Podíl aktivních nakažených Covid-19 na 100 000 obyvatel podle okresů ČR';
-	} else {
-		headline = 'Počet aktivních nakažených Covid-19 podle okresů ČR';
-	}
+	headline = headline;
 	ctx = document.getElementById(target).getContext('2d');
 	var lineChart = new Chart(ctx, {
 	  type: 'line',
@@ -115,7 +148,7 @@ function graf(data_file, axisX, districts, mode, target) {
         },
 	  	title: {
 	  		display: true,
-	  		text: headline+' (poslední aktualizace: '+moment(data['modified']).locale('cs').format("LLLL")+')',
+	  		text: headline,
 	  		fontColor: 'black',
 	  		fontStyle: 'bold',
 	  		fontSize: 20
@@ -133,5 +166,168 @@ function graf(data_file, axisX, districts, mode, target) {
             }]
         }
 	  }
+	});
+}
+
+function setting_date3(data_file, axisX) {
+	if (data_file) {
+		for (i in data_file) {
+			if (i > 33) {
+				if (date5 && (!(date5.includes(data_file[i]['datum'])))) {
+				date5.push(data_file[i]['datum']);
+				}
+			}			
+		}
+	} else {
+		alert("Data se nepodařilo načíst! Prosím, aktualizujte stránku.");
+	}
+	setting_numbers3(data_file, date5);
+	setting_numbers4(data_file, date5);
+	setting_numbers5(data_file, date5);
+}
+
+function setting_numbers3(data_file, axisX) {
+	var cz = []; 
+	var numbers_CZ_ratio = [];
+	var numbers_CZ_mortality = [];
+
+	for (var j = 34; j < data_file.length; j++) {
+		numbers_CZ_ratio.push((((data_file[j]['kumulativni_pocet_nakazenych'])/(data_file[j]['kumulativni_pocet_testu']))*100).toFixed(4));
+		numbers_CZ_mortality.push((((data_file[j]['kumulativni_pocet_umrti'])/(data_file[j]['kumulativni_pocet_nakazenych']))*100).toFixed(4));
+	}	
+	numbers_CZ_ratio = {
+		label: "Poměr nakažených ku testům (% kumulativně)",
+		data: numbers_CZ_ratio,
+		lineTension: 0,
+    	fill: false,
+    	borderColor: "orange"
+	}
+	numbers_CZ_mortality = {
+		label: "Smrtnost (% kumulativně)",
+		data: numbers_CZ_mortality,
+		lineTension: 0,
+    	fill: false,
+    	borderColor: "black"
+	}
+	cz.push(numbers_CZ_ratio, numbers_CZ_mortality);
+	graf(data, axisX, cz, "myChart3", 'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR')
+}
+
+function setting_numbers4(data_file, axisX) {
+	var cz = []; 
+	var numbers_CZ_infected = [];
+	var numbers_CZ_recovered = [];
+	var numbers_CZ_dead = [];
+	var numbers_CZ_active = [];
+
+	for (var j = 34; j < data_file.length; j++) {
+		numbers_CZ_infected.push(data_file[j]['kumulativni_pocet_nakazenych']);
+		numbers_CZ_recovered.push(data_file[j]['kumulativni_pocet_vylecenych']);
+		numbers_CZ_dead.push(data_file[j]['kumulativni_pocet_umrti']);
+		numbers_CZ_active.push(data_file[j]['kumulativni_pocet_nakazenych']-
+			data_file[j]['kumulativni_pocet_vylecenych']-data_file[j]['kumulativni_pocet_umrti']);
+	}	
+	numbers_CZ_infected = {
+		label: "Celkový počet nakažených",
+		data: numbers_CZ_infected,
+		lineTension: 0,
+    	fill: false,
+    	borderColor: "darkred"
+	}
+	numbers_CZ_recovered = {
+		label: "Celkový počet vyléčených",
+		data: numbers_CZ_recovered,
+		lineTension: 0,
+    	fill: false,
+    	borderColor: "green"
+	}
+	numbers_CZ_dead = {
+		label: "Celkový počet mrtvých",
+		data: numbers_CZ_dead,
+		lineTension: 0,
+    	fill: false,
+    	borderColor: "black"
+	}
+	numbers_CZ_active = {
+		label: "Aktuální počet nakažených",
+		data: numbers_CZ_active,
+		lineTension: 0,
+    	fill: false,
+    	borderColor: "red"
+	}
+	cz.push(numbers_CZ_infected, numbers_CZ_recovered, numbers_CZ_dead, numbers_CZ_active);
+	graf(data, axisX, cz, "myChart4", 'Covid-19 - Počty nakažených, vyléčených a mrtvých')
+}
+
+function setting_numbers5(data_file, axisX) {
+	var cz = []; 
+	var numbers_CZ_infected_daily = [];
+	var numbers_CZ_recovered_daily = [];
+	var numbers_CZ_dead_daily = [];
+
+	for (var j = 34; j < data_file.length; j++) {
+		numbers_CZ_infected_daily.push(data_file[j]['kumulativni_pocet_nakazenych']-data_file[j-1]['kumulativni_pocet_nakazenych']);
+		numbers_CZ_recovered_daily.push(data_file[j]['kumulativni_pocet_vylecenych']-data_file[j-1]['kumulativni_pocet_vylecenych']);
+		numbers_CZ_dead_daily.push(data_file[j]['kumulativni_pocet_umrti']-data_file[j-1]['kumulativni_pocet_umrti']);
+	}	
+	numbers_CZ_infected_daily = {
+		label: "Počet nových nakažených za den",
+		data: numbers_CZ_infected_daily,
+    	backgroundColor: "red",
+		barThickness: 2
+	}
+	numbers_CZ_recovered_daily = {
+		label: "Počet nových vyléčených za den",
+		data: numbers_CZ_recovered_daily,
+    	backgroundColor: "green",
+		barThickness: 2
+	}
+	numbers_CZ_dead_daily = {
+		label: "Počet nových mrtvých za den",
+		data: numbers_CZ_dead_daily,
+    	backgroundColor: "black",
+		barThickness: 2
+	}
+	cz.push(numbers_CZ_infected_daily, numbers_CZ_recovered_daily, numbers_CZ_dead_daily);
+	graf5(data_file, axisX, cz, "myChart5", 'Covid-19 - Denní počty nových nakažených, vyléčených a mrtvých')
+}
+
+function graf5(data_file, axisX, cz, target, headline) {
+	var ctx;
+	headline = headline;
+	ctx = document.getElementById(target).getContext('2d');
+	var myBarChart = new Chart(ctx, {
+	    type: 'bar',
+	    data: {
+	    	labels: axisX,
+		    datasets: cz
+		},
+	    options: {
+		  	legend: {
+	            labels: {
+	                fontColor: "black",
+	                fontSize: 10
+	            }
+	        },
+		  	title: {
+		  		display: true,
+		  		text: headline,
+		  		fontColor: 'black',
+		  		fontStyle: 'bold',
+		  		fontSize: 20
+		  	},
+		  	scales: {
+	            yAxes: [{
+	                ticks: {
+	                    fontColor: "black",
+	                }
+	            }],
+	            xAxes: [{
+	                ticks: {
+	                    fontColor: "black",
+	                }
+	            }]
+	        }
+		}
 	});
 }
