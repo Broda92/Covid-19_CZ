@@ -133,6 +133,35 @@ function graf(data_file, axisX, districts, target, headline) {
 	var ctx;
 	headline = headline;
 	ctx = document.getElementById(target).getContext('2d');
+	var yAxes_settings;
+	if (target == "myChart3") {
+		yAxes_settings = [
+            {
+            	id: 'A',
+            	position: 'left',
+                ticks: {
+                    fontColor: "black",
+                }
+            },
+            {
+            	id: 'B',
+            	position: 'right',
+                ticks: {
+                    fontColor: "black",
+                }
+            }
+            ]
+	} else {
+		yAxes_settings = [
+            {
+            	id: 'A',
+            	position: 'left',
+                ticks: {
+                    fontColor: "black",
+                }
+            }
+         ]
+	}
 	var lineChart = new Chart(ctx, {
 	  type: 'line',
 	  data: {
@@ -154,11 +183,7 @@ function graf(data_file, axisX, districts, target, headline) {
 	  		fontSize: 20
 	  	},
 	  	scales: {
-            yAxes: [{
-                ticks: {
-                    fontColor: "black",
-                }
-            }],
+            yAxes: yAxes_settings,
             xAxes: [{
                 ticks: {
                     fontColor: "black",
@@ -190,26 +215,38 @@ function setting_numbers3(data_file, axisX) {
 	var cz = []; 
 	var numbers_CZ_ratio = [];
 	var numbers_CZ_mortality = [];
+	var numbers_CZ_tests = [];
 
 	for (var j = 34; j < data_file.length; j++) {
 		numbers_CZ_ratio.push((((data_file[j]['kumulativni_pocet_nakazenych'])/(data_file[j]['kumulativni_pocet_testu']))*100).toFixed(4));
 		numbers_CZ_mortality.push((((data_file[j]['kumulativni_pocet_umrti'])/(data_file[j]['kumulativni_pocet_nakazenych']))*100).toFixed(4));
+		numbers_CZ_tests.push(data_file[j]['kumulativni_pocet_testu']);
 	}	
 	numbers_CZ_ratio = {
 		label: "Poměr nakažených ku testům (% kumulativně)",
 		data: numbers_CZ_ratio,
 		lineTension: 0,
     	fill: false,
-    	borderColor: "orange"
+    	borderColor: "orange",
+    	yAxisID: 'A'
 	}
 	numbers_CZ_mortality = {
 		label: "Smrtnost (% kumulativně)",
 		data: numbers_CZ_mortality,
 		lineTension: 0,
     	fill: false,
-    	borderColor: "black"
+    	borderColor: "black",
+    	yAxisID: 'A'
 	}
-	cz.push(numbers_CZ_ratio, numbers_CZ_mortality);
+	numbers_CZ_tests = {
+		label: "Absolutní počet testů",
+		data: numbers_CZ_tests,
+		lineTension: 0,
+    	fill: false,
+    	borderColor: "blue",
+    	yAxisID: 'B'
+	}
+	cz.push(numbers_CZ_ratio, numbers_CZ_mortality, numbers_CZ_tests);
 	graf(data, axisX, cz, "myChart3", 'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR')
 }
 
@@ -242,7 +279,7 @@ function setting_numbers4(data_file, axisX) {
     	borderColor: "green"
 	}
 	numbers_CZ_dead = {
-		label: "Celkový počet mrtvých",
+		label: "Celkový počet zemřelých",
 		data: numbers_CZ_dead,
 		lineTension: 0,
     	fill: false,
@@ -256,7 +293,7 @@ function setting_numbers4(data_file, axisX) {
     	borderColor: "red"
 	}
 	cz.push(numbers_CZ_infected, numbers_CZ_recovered, numbers_CZ_dead, numbers_CZ_active);
-	graf(data, axisX, cz, "myChart4", 'Covid-19 - Počty nakažených, vyléčených a mrtvých')
+	graf(data, axisX, cz, "myChart4", 'Covid-19 - Počty nakažených, vyléčených a zemřelých')
 }
 
 function setting_numbers5(data_file, axisX) {
@@ -283,13 +320,13 @@ function setting_numbers5(data_file, axisX) {
 		barThickness: 2
 	}
 	numbers_CZ_dead_daily = {
-		label: "Počet nových mrtvých za den",
+		label: "Počet nových zemřelých za den",
 		data: numbers_CZ_dead_daily,
     	backgroundColor: "black",
 		barThickness: 2
 	}
 	cz.push(numbers_CZ_infected_daily, numbers_CZ_recovered_daily, numbers_CZ_dead_daily);
-	graf5(data_file, axisX, cz, "myChart5", 'Covid-19 - Denní počty nových nakažených, vyléčených a mrtvých')
+	graf5(data_file, axisX, cz, "myChart5", 'Covid-19 - Denní počty nových nakažených, vyléčených a zemřelých')
 }
 
 function graf5(data_file, axisX, cz, target, headline) {
