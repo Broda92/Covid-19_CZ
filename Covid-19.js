@@ -122,7 +122,7 @@ function setting_numbers1(data_file, axisX, districts_properties, mode, target) 
 		districts.push(district_data);
 	}	
 	if (mode == 'rel') {
-		headline = 'Podíl aktivních nakažených Covid-19 na 100 000 obyvatel podle okresů ČR (data doplňována s týdenním zpožděním)';
+		headline = 'Počet aktivních nakažených Covid-19 na 100 000 obyvatel podle okresů ČR (data doplňována s týdenním zpožděním)';
 	} else {
 		headline = 'Počet aktivních nakažených Covid-19 podle okresů ČR (data doplňována s týdenním zpožděním)';
 	}
@@ -137,17 +137,20 @@ function graf(data_file, axisX, districts, target, headline) {
 	if (target == "myChart3") {
 		yAxes_settings = [
             {
-            	id: 'A',
+            	id: 'B',
             	position: 'left',
                 ticks: {
-                    fontColor: "black",
+                    fontColor: "blue",
                 }
             },
             {
-            	id: 'B',
+            	id: 'A',
             	position: 'right',
                 ticks: {
-                    fontColor: "black",
+                    fontColor: "orange",
+                    callback: function(value, index, values) {
+                        return value + ' %';
+                    }
                 }
             }
             ]
@@ -209,6 +212,7 @@ function setting_date3(data_file, axisX) {
 	setting_numbers3(data_file, date5);
 	setting_numbers4(data_file, date5);
 	setting_numbers5(data_file, date5);
+	setting_numbers6(data_file, date5);
 }
 
 function setting_numbers3(data_file, axisX) {
@@ -329,10 +333,71 @@ function setting_numbers5(data_file, axisX) {
 	graf5(data_file, axisX, cz, "myChart5", 'Covid-19 - Denní počty nových nakažených, vyléčených a zemřelých')
 }
 
+function setting_numbers6(data_file, axisX) {
+	var cz = []; 
+	var numbers_CZ_tests_daily = [];
+	var numbers_CZ_positivity_daily = [];
+
+	for (var j = 34; j < data_file.length; j++) {
+		numbers_CZ_tests_daily.push(data_file[j]['kumulativni_pocet_testu']-data_file[j-1]['kumulativni_pocet_testu']);
+		numbers_CZ_positivity_daily.push(
+			(((data_file[j]['kumulativni_pocet_nakazenych']-data_file[j-1]['kumulativni_pocet_nakazenych'])/
+									(data_file[j]['kumulativni_pocet_testu']-data_file[j-1]['kumulativni_pocet_testu']))*100).toFixed(2)
+			);
+	}	
+	numbers_CZ_tests_daily = {
+		label: "Počet testů za den",
+		data: numbers_CZ_tests_daily,
+    	backgroundColor: "blue",
+		barThickness: 2,
+		yAxisID: 'A'
+	}
+	numbers_CZ_positivity_daily = {
+		label: "Podíl pozitivních případů za den (%)",
+		data: numbers_CZ_positivity_daily,
+    	backgroundColor: "red",
+		barThickness: 2,
+		yAxisID: 'B'
+	}
+	cz.push(numbers_CZ_tests_daily, numbers_CZ_positivity_daily);
+	graf5(data_file, axisX, cz, "myChart6", 'Covid-19 - Denní počty testů a podíly nakažených')
+}
+
 function graf5(data_file, axisX, cz, target, headline) {
 	var ctx;
 	headline = headline;
 	ctx = document.getElementById(target).getContext('2d');
+	if (target == "myChart6") {
+		yAxes_settings = [
+            {
+            	id: 'A',
+            	position: 'left',
+                ticks: {
+                    fontColor: "blue",
+                }
+            },
+            {
+            	id: 'B',
+            	position: 'right',
+                ticks: {
+                    fontColor: "red",
+                    callback: function(value, index, values) {
+                        return value + ' %';
+                    }
+                }
+            }
+            ]
+	} else {
+		yAxes_settings = [
+            {
+            	id: 'A',
+            	position: 'left',
+                ticks: {
+                    fontColor: "black",
+                }
+            }
+         ]
+	}
 	var myBarChart = new Chart(ctx, {
 	    type: 'bar',
 	    data: {
@@ -354,11 +419,7 @@ function graf5(data_file, axisX, cz, target, headline) {
 		  		fontSize: 20
 		  	},
 		  	scales: {
-	            yAxes: [{
-	                ticks: {
-	                    fontColor: "black",
-	                }
-	            }],
+	            yAxes: yAxes_settings,
 	            xAxes: [{
 	                ticks: {
 	                    fontColor: "black",
