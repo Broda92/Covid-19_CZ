@@ -43,10 +43,14 @@ function setting() {
 	request2.send();
 
 	setTimeout(function(){
-		setting_date1(data, axisX, districts_properties, "abs", "myChart");
-		setting_date1(data, axisX, districts_properties, "rel", "myChart2");
-		setting_date3(data_CZ, axisX);
-		update_date_text();
+		if (data && data_CZ && districts_properties) {
+			setting_date1(data, axisX, districts_properties, "abs", "myChart");
+			setting_date1(data, axisX, districts_properties, "rel", "myChart2");
+			setting_date3(data_CZ, axisX);
+			update_date_text();
+		} else {
+			alert("Data se nepodařilo načíst! Prosím, aktualizujte stránku.");
+		}		
 	}, 500);
 }
 
@@ -57,15 +61,11 @@ function update_date_text() {
 };
 
 function setting_date1(data_file, axisX, districts_properties, mode, target) {
-	if (data) {
 		for (i in data['data']) {
 			if (date && (!(date.includes(data['data'][i]['datum'])))) {
 				date.push(data['data'][i]['datum']);
 			}
 		}
-	} else {
-		alert("Data se nepodařilo načíst! Prosím, aktualizujte stránku.");
-	}
 	setting_numbers1(data, date, districts_properties, mode, target);
 }
 
