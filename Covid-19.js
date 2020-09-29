@@ -51,7 +51,7 @@ function setting() {
 		} else {
 			alert("Data se nepodařilo načíst! Prosím, aktualizujte stránku.");
 		}		
-	}, 500);
+	}, 1000);
 }
 
 setting();
