@@ -252,7 +252,13 @@ function setting_numbers3(data_file, axisX) {
     	yAxisID: 'B'
 	}
 	cz.push(numbers_CZ_ratio, numbers_CZ_mortality, numbers_CZ_tests);
-	graf(data, axisX, cz, "myChart3", 'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR')
+	var tests_chart_title3;
+	if (cz[2]['data'][(cz[2]['data']).length-1] == cz[2]['data'][(cz[2]['data']).length-2]) {
+		tests_chart_title3 = 'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR (chybí počet testů za včerejší den!)';
+	} else {
+		tests_chart_title3 = 'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR';
+	}
+	graf(data, axisX, cz, "myChart3", tests_chart_title3)
 }
 
 function setting_numbers4(data_file, axisX) {
@@ -361,7 +367,13 @@ function setting_numbers6(data_file, axisX) {
 		yAxisID: 'B'
 	}
 	cz.push(numbers_CZ_tests_daily, numbers_CZ_positivity_daily);
-	graf5(data_file, axisX, cz, "myChart6", 'Covid-19 - Denní počty testů a podíly nakažených')
+	var tests_chart_title6;
+	if (cz[1]['data'][(cz[1]['data']).length-1] == "Infinity") {
+		tests_chart_title6 = 'Covid-19 - Denní počty testů a podíly nakažených (chybí počet testů za včerejší den!)';
+	} else {
+		tests_chart_title6 = 'Covid-19 - Denní počty testů a podíly nakažených';
+	}
+	graf5(data_file, axisX, cz, "myChart6", tests_chart_title6)
 }
 
 function graf5(data_file, axisX, cz, target, headline) {
