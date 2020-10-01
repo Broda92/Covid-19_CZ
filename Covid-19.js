@@ -72,10 +72,10 @@ function setting_date1(data_file, axisX, districts_properties, mode, target) {
 
 function setting_numbers1(data_file, axisX, districts_properties, mode, target) {
 	for (i in data['data']) {
-		if (districts_lau_codes && (!(districts_lau_codes[1].includes(data['data'][i]['kraj_nuts_kod'])))) {
-			districts_lau_codes[1].push(data['data'][i]['kraj_nuts_kod']);			
+		if (districts_lau_codes && (!(districts_lau_codes[1].includes(data['data'][i]['okres_lau_kod'])))) {
+			districts_lau_codes[1].push(data['data'][i]['okres_lau_kod']);			
 			for (j in districts_properties) {
-				if (districts_properties[j]['okres_kod'].includes(data['data'][i]['kraj_nuts_kod'])) {
+				if (districts_properties[j]['okres_kod'].includes(data['data'][i]['okres_lau_kod'])) {
 					districts_lau_codes[0].push(districts_properties[j]['okres_nazev']);
 					districts_lau_codes[2].push(districts_properties[j]['obyv_2019']);
 				}
@@ -90,7 +90,7 @@ function setting_numbers1(data_file, axisX, districts_properties, mode, target) 
 	for (i in districts_lau_codes[1]) {
 		var district_numbers = [];
 		for (j in data['data']) {
-			if (data['data'][j]['kraj_nuts_kod'] == districts_lau_codes[1][i]) {		
+			if (data['data'][j]['okres_lau_kod'] == districts_lau_codes[1][i]) {		
 				amount = data['data'][j]['kumulativni_pocet_nakazenych']-data['data'][j]['kumulativni_pocet_umrti']-data['data'][j]['kumulativni_pocet_vylecenych'];		
 				percentage = ((amount/districts_lau_codes[2][i])*100000).toFixed(0);
 				if (mode == 'rel') {
