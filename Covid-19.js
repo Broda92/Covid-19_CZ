@@ -396,9 +396,7 @@ function graf5(data_file, axisX, cz, target, headline) {
                     fontColor: "red",
                     callback: function(value, index, values) {
                         return value + ' %';
-                    },
-                    max: 35,
-	                min: 0
+                    }
                 }
             }
             ]
