@@ -52,7 +52,7 @@ function setting() {
 		} else {
 			alert("Data se nepodařilo načíst! Prosím, aktualizujte stránku.");
 		}		
-	}, 1000);
+	}, 2500);
 }
 
 setting();
