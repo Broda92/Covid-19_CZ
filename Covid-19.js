@@ -304,7 +304,7 @@ function setting_numbers4(data_file, axisX) {
     	borderColor: "red"
 	}
 	cz.push(numbers_CZ_infected, numbers_CZ_recovered, numbers_CZ_dead, numbers_CZ_active);
-	graf(data, axisX, cz, "myChart4", 'Covid-19 - Počty nakažených, vyléčených a zemřelých')
+	graf(data, axisX, cz, "myChart4", 'Covid-19 - Počty nakažených, vyléčených a zemřelých (počty za posledních cca 5 dní nejsou konečné!)')
 }
 
 function setting_numbers5(data_file, axisX) {
