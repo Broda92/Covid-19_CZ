@@ -45,7 +45,7 @@ function setting() {
 
 	setTimeout(function(){
 		if (data && data_CZ && districts_properties) {
-			setting_date1(data, axisX, districts_properties, "abs", "myChart");
+			setting_date1(data, axisX, districts_properties, "abs", "myChart1");
 			setting_date1(data, axisX, districts_properties, "rel", "myChart2");
 			setting_date3(data_CZ, axisX);
 			update_date_text();
@@ -192,6 +192,15 @@ function graf(data_file, axisX, districts, target, headline) {
             }]
         }
 	  }
+	});
+	$(".myChart_button").click(function() {
+		let id = (this.id == "myChart1_button") ? 0 : 1;
+		if (lineChart.id == id) {
+		    lineChart.data.datasets.forEach(function(ds) {
+		    ds.hidden = !ds.hidden;
+		  	});
+		  	lineChart.update();
+		}		
 	});
 }
 
