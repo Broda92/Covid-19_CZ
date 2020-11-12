@@ -10,7 +10,7 @@ var headline;
 var target;
 
 function setting() {
-	var request = new XMLHttpRequest();
+	let request = new XMLHttpRequest();
 	request.open('GET', 'https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/kraj-okres-nakazeni-vyleceni-umrti.json');	
 
 	request.onreadystatechange = function () {
@@ -21,7 +21,7 @@ function setting() {
 	};
 	request.send();	
 
-	var request3 = new XMLHttpRequest();
+	let request3 = new XMLHttpRequest();
 	request3.open('GET','https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/nakazeni-vyleceni-umrti-testy.json');
 
 	request3.onreadystatechange = function() {
@@ -32,7 +32,7 @@ function setting() {
 	}	
 	request3.send();
 
-	var request2 = new XMLHttpRequest();
+	let request2 = new XMLHttpRequest();
 	request2.open('GET','CSU_obyv_okresy.json');
 
 	request2.onreadystatechange = function() {
@@ -82,13 +82,13 @@ function setting_numbers1(data_file, axisX, districts_properties, mode, target) 
 			}
 		}
 	}
-	var districts = [];
+	let districts = [];
 
-	var amount;
-	var percentage;
-	var region_colors = ["red","orange","yellow","green","lime","blue","darkblue","blueviolet","magenta","gray","black","saddlebrown","greenyellow","deepskyblue"]
+	let amount;
+	let percentage;
+	const region_colors = ["red","orange","yellow","green","lime","blue","darkblue","blueviolet","magenta","gray","black","saddlebrown","greenyellow","deepskyblue"]
 	for (i in districts_lau_codes[1]) {
-		var district_numbers = [];
+		let district_numbers = [];
 		for (j in data['data']) {
 			if (data['data'][j]['okres_lau_kod'] == districts_lau_codes[1][i]) {		
 				amount = data['data'][j]['kumulativni_pocet_nakazenych']-data['data'][j]['kumulativni_pocet_umrti']-data['data'][j]['kumulativni_pocet_vylecenych'];		
@@ -101,19 +101,19 @@ function setting_numbers1(data_file, axisX, districts_properties, mode, target) 
 				
 			}
 		}	
-		var regions_codes = [];
+		let regions_codes = [];
 		for (c in districts_lau_codes[1]) {
 			if (regions_codes.includes((districts_lau_codes[1][c]).slice(2,5)) == false) {
 				regions_codes.push((districts_lau_codes[1][c]).slice(2,5));
 			}
 		}
-		var region_color;
+		let region_color;
 		for (r in regions_codes) {
 			if (regions_codes[r] == (districts_lau_codes[1][i]).slice(2,5)) {
 				region_color = region_colors[r];
 			}
 		}
-		var district_data = {
+		let district_data = {
 			label: districts_lau_codes[0][i],
 			data: district_numbers,
 			lineTension: 0,
@@ -128,10 +128,10 @@ function setting_numbers1(data_file, axisX, districts_properties, mode, target) 
 }
 
 function graf(data_file, axisX, districts, target, headline) {
-	var ctx;
+	let ctx;
 	headline = headline;
 	ctx = document.getElementById(target).getContext('2d');
-	var yAxes_settings;
+	let yAxes_settings;
 	if (target == "myChart3") {
 		yAxes_settings = [
             {
@@ -163,7 +163,7 @@ function graf(data_file, axisX, districts, target, headline) {
             }
          ]
 	}
-	var lineChart = new Chart(ctx, {
+	let lineChart = new Chart(ctx, {
 	  type: 'line',
 	  data: {
 	    labels: axisX,
@@ -214,12 +214,12 @@ function setting_date3(data_file, axisX) {
 }
 
 function setting_numbers3(data_file, axisX) {
-	var cz = []; 
-	var numbers_CZ_ratio = [];
-	var numbers_CZ_mortality = [];
-	var numbers_CZ_tests = [];
+	let cz = []; 
+	let numbers_CZ_ratio = [];
+	let numbers_CZ_mortality = [];
+	let numbers_CZ_tests = [];
 
-	for (var j = 34; j < data_file.length; j++) {
+	for (let j = 34; j < data_file.length; j++) {
 		numbers_CZ_ratio.push((((data_file[j]['kumulativni_pocet_nakazenych'])/(data_file[j]['kumulativni_pocet_testu']))*100).toFixed(4));
 		numbers_CZ_mortality.push((((data_file[j]['kumulativni_pocet_umrti'])/(data_file[j]['kumulativni_pocet_nakazenych']))*100).toFixed(4));
 		numbers_CZ_tests.push(data_file[j]['kumulativni_pocet_testu']);
@@ -249,20 +249,20 @@ function setting_numbers3(data_file, axisX) {
     	yAxisID: 'B'
 	}
 	cz.push(numbers_CZ_ratio, numbers_CZ_mortality, numbers_CZ_tests);
-	var tests_chart_title3 = (cz[2]['data'][(cz[2]['data']).length-1] == cz[2]['data'][(cz[2]['data']).length-2]) ? 
+	let tests_chart_title3 = (cz[2]['data'][(cz[2]['data']).length-1] == cz[2]['data'][(cz[2]['data']).length-2]) ? 
 	'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR (chybí počet testů za včerejší den!)':
 	'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR';
 	graf(data, axisX, cz, "myChart3", tests_chart_title3)
 }
 
 function setting_numbers4(data_file, axisX) {
-	var cz = []; 
-	var numbers_CZ_infected = [];
-	var numbers_CZ_recovered = [];
-	var numbers_CZ_dead = [];
-	var numbers_CZ_active = [];
+	let cz = []; 
+	let numbers_CZ_infected = [];
+	let numbers_CZ_recovered = [];
+	let numbers_CZ_dead = [];
+	let numbers_CZ_active = [];
 
-	for (var j = 34; j < data_file.length; j++) {
+	for (let j = 34; j < data_file.length; j++) {
 		numbers_CZ_infected.push(data_file[j]['kumulativni_pocet_nakazenych']);
 		numbers_CZ_recovered.push(data_file[j]['kumulativni_pocet_vylecenych']);
 		numbers_CZ_dead.push(data_file[j]['kumulativni_pocet_umrti']);
@@ -302,12 +302,12 @@ function setting_numbers4(data_file, axisX) {
 }
 
 function setting_numbers5(data_file, axisX) {
-	var cz = []; 
-	var numbers_CZ_infected_daily = [];
-	var numbers_CZ_recovered_daily = [];
-	var numbers_CZ_dead_daily = [];
+	let cz = []; 
+	let numbers_CZ_infected_daily = [];
+	let numbers_CZ_recovered_daily = [];
+	let numbers_CZ_dead_daily = [];
 
-	for (var j = 34; j < data_file.length; j++) {
+	for (let j = 34; j < data_file.length; j++) {
 		numbers_CZ_infected_daily.push(data_file[j]['kumulativni_pocet_nakazenych']-data_file[j-1]['kumulativni_pocet_nakazenych']);
 		numbers_CZ_recovered_daily.push(data_file[j]['kumulativni_pocet_vylecenych']-data_file[j-1]['kumulativni_pocet_vylecenych']);
 		numbers_CZ_dead_daily.push(data_file[j]['kumulativni_pocet_umrti']-data_file[j-1]['kumulativni_pocet_umrti']);
@@ -331,15 +331,15 @@ function setting_numbers5(data_file, axisX) {
 		barThickness: 2
 	}
 	cz.push(numbers_CZ_infected_daily, numbers_CZ_recovered_daily, numbers_CZ_dead_daily);
-	graf5(data_file, axisX, cz, "myChart5", 'Covid-19 - Denní počty nových nakažených, vyléčených a zemřelých')
+	graf5(data_file, axisX, cz, "myChart5", 'Covid-19 - Denní počty nových nakažených, vyléčených a zemřelých (počty za posledních cca 5 dní nejsou konečné!)')
 }
 
 function setting_numbers6(data_file, axisX) {
-	var cz = []; 
-	var numbers_CZ_tests_daily = [];
-	var numbers_CZ_positivity_daily = [];
+	let cz = []; 
+	let numbers_CZ_tests_daily = [];
+	let numbers_CZ_positivity_daily = [];
 
-	for (var j = 34; j < data_file.length; j++) {
+	for (let j = 34; j < data_file.length; j++) {
 		numbers_CZ_tests_daily.push(data_file[j]['kumulativni_pocet_testu']-data_file[j-1]['kumulativni_pocet_testu']);
 		numbers_CZ_positivity_daily.push(
 			(((data_file[j]['kumulativni_pocet_nakazenych']-data_file[j-1]['kumulativni_pocet_nakazenych'])/
@@ -361,14 +361,14 @@ function setting_numbers6(data_file, axisX) {
 		yAxisID: 'B'
 	}
 	cz.push(numbers_CZ_tests_daily, numbers_CZ_positivity_daily);
-	var tests_chart_title6 = (cz[1]['data'][(cz[1]['data']).length-1] == "Infinity") ?
+	let tests_chart_title6 = (cz[1]['data'][(cz[1]['data']).length-1] == "Infinity") ?
 	'Covid-19 - Denní počty testů a podíly nakažených (chybí počet testů za včerejší den!)':
 	'Covid-19 - Denní počty testů a podíly nakažených';
 	graf5(data_file, axisX, cz, "myChart6", tests_chart_title6)
 }
 
 function graf5(data_file, axisX, cz, target, headline) {
-	var ctx;
+	let ctx;
 	headline = headline;
 	ctx = document.getElementById(target).getContext('2d');
 	if (target == "myChart6") {
@@ -404,7 +404,7 @@ function graf5(data_file, axisX, cz, target, headline) {
             }
          ]
 	}
-	var myBarChart = new Chart(ctx, {
+	let myBarChart = new Chart(ctx, {
 	    type: 'bar',
 	    data: {
 	    	labels: axisX,
