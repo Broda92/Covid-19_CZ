@@ -122,11 +122,8 @@ function setting_numbers1(data_file, axisX, districts_properties, mode, target) 
 		}
 		districts.push(district_data);
 	}	
-	if (mode == 'rel') {
-		headline = 'Počet aktivních nakažených Covid-19 na 100 000 obyvatel podle okresů ČR (data doplňována s týdenním zpožděním)';
-	} else {
-		headline = 'Počet aktivních nakažených Covid-19 podle okresů ČR (data doplňována s týdenním zpožděním)';
-	}
+	headline = (mode == 'rel') ? 'Počet aktivních nakažených Covid-19 na 100 000 obyvatel podle okresů ČR (data doplňována s týdenním zpožděním)':
+	'Počet aktivních nakažených Covid-19 podle okresů ČR (data doplňována s týdenním zpožděním)'
 	graf(data, axisX, districts, target, headline);
 }
 
@@ -252,12 +249,9 @@ function setting_numbers3(data_file, axisX) {
     	yAxisID: 'B'
 	}
 	cz.push(numbers_CZ_ratio, numbers_CZ_mortality, numbers_CZ_tests);
-	var tests_chart_title3;
-	if (cz[2]['data'][(cz[2]['data']).length-1] == cz[2]['data'][(cz[2]['data']).length-2]) {
-		tests_chart_title3 = 'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR (chybí počet testů za včerejší den!)';
-	} else {
-		tests_chart_title3 = 'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR';
-	}
+	var tests_chart_title3 = (cz[2]['data'][(cz[2]['data']).length-1] == cz[2]['data'][(cz[2]['data']).length-2]) ? 
+	'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR (chybí počet testů za včerejší den!)':
+	'Covid-19 - Koeficient celkové pozitivity a smrtnosti v ČR';
 	graf(data, axisX, cz, "myChart3", tests_chart_title3)
 }
 
@@ -367,12 +361,9 @@ function setting_numbers6(data_file, axisX) {
 		yAxisID: 'B'
 	}
 	cz.push(numbers_CZ_tests_daily, numbers_CZ_positivity_daily);
-	var tests_chart_title6;
-	if (cz[1]['data'][(cz[1]['data']).length-1] == "Infinity") {
-		tests_chart_title6 = 'Covid-19 - Denní počty testů a podíly nakažených (chybí počet testů za včerejší den!)';
-	} else {
-		tests_chart_title6 = 'Covid-19 - Denní počty testů a podíly nakažených';
-	}
+	var tests_chart_title6 = (cz[1]['data'][(cz[1]['data']).length-1] == "Infinity") ?
+	'Covid-19 - Denní počty testů a podíly nakažených (chybí počet testů za včerejší den!)':
+	'Covid-19 - Denní počty testů a podíly nakažených';
 	graf5(data_file, axisX, cz, "myChart6", tests_chart_title6)
 }
 
