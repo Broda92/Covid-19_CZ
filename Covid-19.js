@@ -190,16 +190,55 @@ function graf(data_file, axisX, districts, target, headline) {
                     fontColor: "black",
                 }
             }]
-        }
-	  }
+        },
+        plugins: {
+			zoom: {
+				pan: {
+					enabled: false,
+					mode: 'xy',
+					rangeMin: {
+						x: null,
+						y: null
+					},
+					rangeMax: {
+						x: null,
+						y: null
+					},
+					speed: 20,
+					threshold: 10,
+				},
+				zoom: {
+					enabled: true,
+					drag: true,
+					mode: 'xy',
+					rangeMin: {
+						x: null,
+						y: null
+					},
+					rangeMax: {
+						x: null,
+						y: null
+					},
+					speed: 0.1,
+					threshold: 2,
+					sensitivity: 3,
+				}
+			}
+		}
+}
 	});
-	$(".myChart_button").click(function() {
-		let id = (this.id == "myChart1_button") ? 0 : 1;
+	$(".myChart_onoff").click(function() {
+		let id = (this.id == "myChart1_onoff") ? 0 : 1;
 		if (lineChart.id == id) {
 		    lineChart.data.datasets.forEach(function(ds) {
 		    ds.hidden = !ds.hidden;
 		  	});
 		  	lineChart.update();
+		}		
+	});
+	$(".myChart_resetzoom").click(function() {
+		if (this.id == "myChart"+(lineChart.id+1)+"_resetzoom") {
+			lineChart.resetZoom();
 		}		
 	});
 }
@@ -440,7 +479,46 @@ function graf5(data_file, axisX, cz, target, headline) {
 	                    fontColor: "black",
 	                }
 	            }]
-	        }
+	        },
+	        plugins: {
+				zoom: {
+					pan: {
+						enabled: false,
+						mode: 'xy',
+						rangeMin: {
+							x: null,
+							y: null
+						},
+						rangeMax: {
+							x: null,
+							y: null
+						},
+						speed: 20,
+						threshold: 10,
+					},
+					zoom: {
+						enabled: true,
+						drag: true,
+						mode: 'xy',
+						rangeMin: {
+							x: null,
+							y: null
+						},
+						rangeMax: {
+							x: null,
+							y: null
+						},
+						speed: 0.1,
+						threshold: 2,
+						sensitivity: 3,
+					}
+				}
+			}
 		}
+	});
+	$(".myChart_resetzoom").click(function() {
+		if (this.id == "myChart"+(myBarChart.id+1)+"_resetzoom") {
+			myBarChart.resetZoom();
+		}		
 	});
 }
