@@ -158,7 +158,8 @@ function graf(data_file, axisX, districts, target, headline) {
             	id: 'A',
             	position: 'left',
                 ticks: {
-                    fontColor: "black",
+                    fontColor: "black",                   
+              		min: 0
                 }
             }
          ]
@@ -187,7 +188,8 @@ function graf(data_file, axisX, districts, target, headline) {
             yAxes: yAxes_settings,
             xAxes: [{
                 ticks: {
-                    fontColor: "black",
+                    fontColor: "black",                    
+                    min: 0
                 }
             }]
         },
