@@ -103,13 +103,13 @@ function setting_numbers1(data_file, axisX, districts_properties, mode, target) 
 		}	
 		let regions_codes = [];
 		for (c in districts_lau_codes[1]) {
-			if (regions_codes.includes((districts_lau_codes[1][c]).slice(2,5)) == false) {
+			if ((districts_lau_codes[1][c] !== null) && (regions_codes.includes((districts_lau_codes[1][c]).slice(2,5)) == false)) {
 				regions_codes.push((districts_lau_codes[1][c]).slice(2,5));
 			}
 		}
 		let region_color;
 		for (r in regions_codes) {
-			if (regions_codes[r] == (districts_lau_codes[1][i]).slice(2,5)) {
+			if ((districts_lau_codes[1][i] !== null) && (regions_codes[r] == (districts_lau_codes[1][i]).slice(2,5))) {
 				region_color = region_colors[r];
 			}
 		}
