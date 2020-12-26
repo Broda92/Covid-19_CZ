@@ -437,8 +437,8 @@ function graf5(data_file, axisX, cz, target, headline) {
                     callback: function(value, index, values) {
                         return value + ' %';
                     },
-                    min: 0,
-                    max: 40
+                    min: 0/*,
+                    max: 45*/
                 }
             }
             ]
