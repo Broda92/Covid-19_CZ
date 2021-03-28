@@ -50,7 +50,9 @@ function setting() {
 			setting_date3(data_CZ, axisX);
 			update_date_text();
 		} else {
-			alert("Data se nepodařilo načíst! Prosím, aktualizujte stránku.");
+			if (window.confirm("Data se nepodařilo načíst! Prosím, aktualizujte stránku.")) {
+				location.reload()
+			}
 		}		
 	}, 2500);
 }
