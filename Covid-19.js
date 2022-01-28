@@ -2,32 +2,54 @@ var data;
 var date = [];
 var date3 = [];
 var date5 = [];
-var districts_lau_codes = [[],[],[]];
+var districts_lau_codes = [[],[],[],[]];
 var districts_properties = [];
 var axisX;
 var mode;
 var headline;
 var target;
 
+//var csv is the CSV file with headers
+function csvJSON(csv){
+  var lines=csv.split("\n");
+  var result = [];
+  var headers=lines[0].split(",");
+
+  for (var i=1;i<lines.length;i++){
+      var obj = {};
+      var currentline=lines[i].split(",");
+
+      for (var j=0;j<headers.length;j++){
+          obj[headers[j]] = currentline[j];
+      }
+      result.push(obj);
+  }  
+  return result; //JSON
+}
+
 function setting() {
 	let request = new XMLHttpRequest();
-	request.open('GET', 'https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/kraj-okres-nakazeni-vyleceni-umrti.json');	
+	request.open('GET', 'https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/kraj-okres-nakazeni-vyleceni-umrti.csv');	
 
 	request.onreadystatechange = function () {
-	  if (this.readyState === 4) {
-	    data = JSON.parse(this.responseText);
-	    console.log(data);
+	  if (this.readyState === 4) {		
+		data = csvJSON(this.response)		
+		data.forEach(item => {
+		item["kumulativni_pocet_umrti"] = item["kumulativni_pocet_umrti\r"]
+		delete item["kumulativni_pocet_umrti\r"]
+		if (item["okres_lau_kod"] == "") {item["okres_lau_kod"] = undefined}
+		if (item["kraj_nuts_kod"] == "") {item["kraj_nuts_kod"] = undefined}
+		})
 	  }
 	};
 	request.send();	
 
 	let request3 = new XMLHttpRequest();
-	request3.open('GET','https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/nakazeni-vyleceni-umrti-testy.json');
+	request3.open('GET','https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/nakazeni-vyleceni-umrti-testy.csv');
 
 	request3.onreadystatechange = function() {
 		if (this.readyState === 4) {
-			data_CZ = JSON.parse(this.responseText);
-			data_CZ = data_CZ['data']
+			data_CZ = csvJSON(this.response)
 		}
 	}	
 	request3.send();
@@ -54,7 +76,7 @@ function setting() {
 				location.reload()
 			}
 		}		
-	}, 2500);
+	}, 3000);
 }
 
 setting();
@@ -64,36 +86,41 @@ function update_date_text() {
 };
 
 function setting_date1(data_file, axisX, districts_properties, mode, target) {
-		for (i in data['data']) {
-			if (date && (!(date.includes(data['data'][i]['datum'])))) {
-				date.push(data['data'][i]['datum']);
+		for (i in data) {
+			if (date && (!(date.includes(data[i]['datum'])))) {
+				date.push(data[i]['datum']);
 			}
 		}
 	setting_numbers1(data, date, districts_properties, mode, target);
 }
 
+function onlyUnique(value, index, self) {
+		return self.indexOf(value) === index;
+	}
+
 function setting_numbers1(data_file, axisX, districts_properties, mode, target) {
-	for (i in data['data']) {
-		if (districts_lau_codes && (!(districts_lau_codes[1].includes(data['data'][i]['okres_lau_kod'])))) {
-			districts_lau_codes[1].push(data['data'][i]['okres_lau_kod']);			
+	for (i in data) {
+		if (districts_lau_codes && (!(districts_lau_codes[1].includes(data[i]['okres_lau_kod'])))) {
+			districts_lau_codes[1].push(data[i]['okres_lau_kod']);			
 			for (j in districts_properties) {
-				if (districts_properties[j]['okres_kod'].includes(data['data'][i]['okres_lau_kod'])) {
+				if (districts_properties[j]['okres_kod'].includes(data[i]['okres_lau_kod'])) {
 					districts_lau_codes[0].push(districts_properties[j]['okres_nazev']);
 					districts_lau_codes[2].push(districts_properties[j]['obyv_2019']);
+					districts_lau_codes[3].push(data[i]['okres_lau_kod'].substring(0,5));
 				}
-			}
+			}			
 		}
-	}
-	let districts = [];
+	}	
 
+	let districts = [];
 	let amount;
 	let percentage;
 	const region_colors = ["red","orange","yellow","green","lime","blue","darkblue","blueviolet","magenta","gray","black","saddlebrown","greenyellow","deepskyblue"]
 	for (i in districts_lau_codes[1]) {
 		let district_numbers = [];
-		for (j in data['data']) {
-			if (data['data'][j]['okres_lau_kod'] == districts_lau_codes[1][i]) {		
-				amount = data['data'][j]['kumulativni_pocet_nakazenych']-data['data'][j]['kumulativni_pocet_umrti']-data['data'][j]['kumulativni_pocet_vylecenych'];		
+		for (j in data) {
+			if (data[j]['okres_lau_kod'] == districts_lau_codes[1][i]) {		
+				amount = data[j]['kumulativni_pocet_nakazenych']-data[j]['kumulativni_pocet_umrti']-data[j]['kumulativni_pocet_vylecenych'];		
 				percentage = ((amount/districts_lau_codes[2][i])*100000).toFixed(0);
 				if (mode == 'rel') {
 					district_numbers.push(percentage);
@@ -102,16 +129,12 @@ function setting_numbers1(data_file, axisX, districts_properties, mode, target) 
 				}
 				
 			}
-		}	
-		let regions_codes = [];
-		for (c in districts_lau_codes[1]) {
-			if ((districts_lau_codes[1][c] !== null) && (regions_codes.includes((districts_lau_codes[1][c]).slice(2,5)) == false)) {
-				regions_codes.push((districts_lau_codes[1][c]).slice(2,5));
-			}
-		}
+		}				
+	
+		let regions_codes = districts_lau_codes[3].filter(onlyUnique);
 		let region_color;
 		for (r in regions_codes) {
-			if ((districts_lau_codes[1][i] !== null) && (regions_codes[r] == (districts_lau_codes[1][i]).slice(2,5))) {
+			if ((districts_lau_codes[1][i] !== null) && (regions_codes[r] == (districts_lau_codes[3][i]))) {
 				region_color = region_colors[r];
 			}
 		}
@@ -349,7 +372,7 @@ function setting_numbers4(data_file, axisX) {
     	borderColor: "red"
 	}
 	cz.push(numbers_CZ_infected, numbers_CZ_recovered, numbers_CZ_dead, numbers_CZ_active);
-	graf(data, axisX, cz, "myChart4", 'Covid-19 - Počty nakažených, vyléčených a zemřelých (počty za posledních cca 5 dní nejsou konečné!)')
+	graf(data, axisX, cz, "myChart4", 'Covid-19 - Počty nakažených, vyléčených a zemřelých')
 }
 
 function setting_numbers5(data_file, axisX) {
@@ -382,7 +405,7 @@ function setting_numbers5(data_file, axisX) {
 		barThickness: 2
 	}
 	cz.push(numbers_CZ_infected_daily, numbers_CZ_recovered_daily, numbers_CZ_dead_daily);
-	graf5(data_file, axisX, cz, "myChart5", 'Covid-19 - Denní počty nových nakažených, vyléčených a zemřelých (počty za posledních cca 5 dní nejsou konečné!)')
+	graf5(data_file, axisX, cz, "myChart5", 'Covid-19 - Denní počty nových nakažených, vyléčených a zemřelých')
 }
 
 function setting_numbers6(data_file, axisX) {
