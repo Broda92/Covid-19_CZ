@@ -605,8 +605,8 @@ function setting_numbers1(data_file, axisX, districts_properties, mode, target) 
 		}
 		districts.push(district_data);
 	}	
-	headline = (mode == 'rel') ? 'Počet aktivních nakažených Covid-19 na 100 000 obyvatel podle okresů ČR (data doplňována s týdenním zpožděním)':
-	'Počet aktivních nakažených Covid-19 podle okresů ČR (data doplňována s týdenním zpožděním)'
+	headline = (mode == 'rel') ? 'Počet aktivních nakažených Covid-19 na 100 000 obyvatel podle okresů ČR':
+	'Počet aktivních nakažených Covid-19 podle okresů ČR'
 	graf(data, axisX, districts, target, headline);
 }
 
