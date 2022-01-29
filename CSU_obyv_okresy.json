@@ -3,387 +3,464 @@
         {
             "okres_kod": "CZ0100",
             "okres_nazev": "Hlavní město Praha",
-            "obyv_2019": "1308632"
+            "obyv_2019": "1308632",
+            "zkratka":"AA"
         },
         {
             "okres_kod": "CZ0201",
             "okres_nazev": "Benešov",
-            "obyv_2019": "98708"
+            "obyv_2019": "98708",
+            "zkratka":"BN"
         },
         {
             "okres_kod": "CZ0202",
             "okres_nazev": "Beroun",
-            "obyv_2019": "93726"
+            "obyv_2019": "93726",
+            "zkratka":"BE"
         },
         {
             "okres_kod": "CZ0203",
             "okres_nazev": "Kladno",
-            "obyv_2019": "165271"
+            "obyv_2019": "165271",
+            "zkratka":"KD"
         },
         {
             "okres_kod": "CZ0204",
             "okres_nazev": "Kolín",
-            "obyv_2019": "101604"
+            "obyv_2019": "101604",
+            "zkratka":"KO"
         },
         {
             "okres_kod": "CZ0205",
             "okres_nazev": "Kutná Hora",
-            "obyv_2019": "75370"
+            "obyv_2019": "75370",
+            "zkratka":"KH"
         },
         {
             "okres_kod": "CZ0206",
             "okres_nazev": "Mělník",
-            "obyv_2019": "108352"
+            "obyv_2019": "108352",
+            "zkratka":"ME"
         },
         {
             "okres_kod": "CZ0207",
             "okres_nazev": "Mladá Boleslav",
-            "obyv_2019": "129136"
+            "obyv_2019": "129136",
+            "zkratka":"MB"
         },
         {
             "okres_kod": "CZ0208",
             "okres_nazev": "Nymburk",
-            "obyv_2019": "99873"
+            "obyv_2019": "99873",
+            "zkratka":"NY"
         },
         {
             "okres_kod": "CZ0209",
             "okres_nazev": "Praha-východ",
-            "obyv_2019": "180945"
+            "obyv_2019": "180945",
+            "zkratka":"PY"
         },
         {
             "okres_kod": "CZ020A",
             "okres_nazev": "Praha-západ",
-            "obyv_2019": "146004"
+            "obyv_2019": "146004",
+            "zkratka":"PZ"
         },
         {
             "okres_kod": "CZ020B",
             "okres_nazev": "Příbram",
-            "obyv_2019": "114778"
+            "obyv_2019": "114778",
+            "zkratka":"PB"
         },
         {
             "okres_kod": "CZ020C",
             "okres_nazev": "Rakovník",
-            "obyv_2019": "55565"
+            "obyv_2019": "55565",
+            "zkratka":"RA"
         },
         {
             "okres_kod": "CZ0311",
             "okres_nazev": "České Budějovice",
-            "obyv_2019": "194585"
+            "obyv_2019": "194585",
+            "zkratka":"CB"
         },
         {
             "okres_kod": "CZ0312",
             "okres_nazev": "Český Krumlov",
-            "obyv_2019": "61381"
+            "obyv_2019": "61381",
+            "zkratka":"CK"
         },
         {
             "okres_kod": "CZ0313",
             "okres_nazev": "Jindřichův Hradec",
-            "obyv_2019": "90653"
+            "obyv_2019": "90653",
+            "zkratka":"JH"
         },
         {
             "okres_kod": "CZ0314",
             "okres_nazev": "Písek",
-            "obyv_2019": "71308"
+            "obyv_2019": "71308",
+            "zkratka":"PI"
         },
         {
             "okres_kod": "CZ0315",
             "okres_nazev": "Prachatice",
-            "obyv_2019": "50971"
+            "obyv_2019": "50971",
+            "zkratka":"PT"
         },
         {
             "okres_kod": "CZ0316",
             "okres_nazev": "Strakonice",
-            "obyv_2019": "70738"
+            "obyv_2019": "70738",
+            "zkratka":"ST"
         },
         {
             "okres_kod": "CZ0317",
             "okres_nazev": "Tábor",
-            "obyv_2019": "102497"
+            "obyv_2019": "102497",
+            "zkratka":"TA"
         },
         {
             "okres_kod": "CZ0321",
             "okres_nazev": "Domažlice",
-            "obyv_2019": "61902"
+            "obyv_2019": "61902",
+            "zkratka":"DO"
         },
         {
             "okres_kod": "CZ0322",
             "okres_nazev": "Klatovy",
-            "obyv_2019": "86336"
+            "obyv_2019": "86336",
+            "zkratka":"KT"
         },
         {
             "okres_kod": "CZ0323",
             "okres_nazev": "Plzeň-město",
-            "obyv_2019": "191599"
+            "obyv_2019": "191599",
+            "zkratka":"PM"
         },
         {
             "okres_kod": "CZ0324",
             "okres_nazev": "Plzeň-jih",
-            "obyv_2019": "63004"
+            "obyv_2019": "63004",
+            "zkratka":"PJ"
         },
         {
             "okres_kod": "CZ0325",
             "okres_nazev": "Plzeň-sever",
-            "obyv_2019": "79278"
+            "obyv_2019": "79278",
+            "zkratka":"PS"
         },
         {
             "okres_kod": "CZ0326",
             "okres_nazev": "Rokycany",
-            "obyv_2019": "48966"
+            "obyv_2019": "48966",
+            "zkratka":"RO"
         },
         {
             "okres_kod": "CZ0327",
             "okres_nazev": "Tachov",
-            "obyv_2019": "53587"
+            "obyv_2019": "53587",
+            "zkratka":"TC"
         },
         {
             "okres_kod": "CZ0411",
             "okres_nazev": "Cheb",
-            "obyv_2019": "91540"
+            "obyv_2019": "91540",
+            "zkratka":"CH"
         },
         {
             "okres_kod": "CZ0412",
             "okres_nazev": "Karlovy Vary",
-            "obyv_2019": "115014"
+            "obyv_2019": "115014",
+            "zkratka":"KV"
         },
         {
             "okres_kod": "CZ0413",
             "okres_nazev": "Sokolov",
-            "obyv_2019": "88342"
+            "obyv_2019": "88342",
+            "zkratka":"SO"
         },
         {
             "okres_kod": "CZ0421",
             "okres_nazev": "Děčín",
-            "obyv_2019": "129831"
+            "obyv_2019": "129831",
+            "zkratka":"DC"
         },
         {
             "okres_kod": "CZ0422",
             "okres_nazev": "Chomutov",
-            "obyv_2019": "124751"
+            "obyv_2019": "124751",
+            "zkratka":"CV"
         },
         {
             "okres_kod": "CZ0423",
             "okres_nazev": "Litoměřice",
-            "obyv_2019": "119655"
+            "obyv_2019": "119655",
+            "zkratka":"LT"
         },
         {
             "okres_kod": "CZ0424",
             "okres_nazev": "Louny",
-            "obyv_2019": "86486"
+            "obyv_2019": "86486",
+            "zkratka":"LN"
         },
         {
             "okres_kod": "CZ0425",
             "okres_nazev": "Most",
-            "obyv_2019": "112049"
+            "obyv_2019": "112049",
+            "zkratka":"MO"
         },
         {
             "okres_kod": "CZ0426",
             "okres_nazev": "Teplice",
-            "obyv_2019": "128610"
+            "obyv_2019": "128610",
+            "zkratka":"TP"
         },
         {
             "okres_kod": "CZ0427",
             "okres_nazev": "Ústí nad Labem",
-            "obyv_2019": "119407"
+            "obyv_2019": "119407",
+            "zkratka":"UL"
         },
         {
             "okres_kod": "CZ0511",
             "okres_nazev": "Česká Lípa",
-            "obyv_2019": "103135"
+            "obyv_2019": "103135",
+            "zkratka":"CL"
         },
         {
             "okres_kod": "CZ0512",
             "okres_nazev": "Jablonec nad Nisou",
-            "obyv_2019": "90528"
+            "obyv_2019": "90528",
+            "zkratka":"JN"
         },
         {
             "okres_kod": "CZ0513",
             "okres_nazev": "Liberec",
-            "obyv_2019": "174811"
+            "obyv_2019": "174811",
+            "zkratka":"LI"
         },
         {
             "okres_kod": "CZ0514",
             "okres_nazev": "Semily",
-            "obyv_2019": "73882"
+            "obyv_2019": "73882",
+            "zkratka":"SM"
         },
         {
             "okres_kod": "CZ0521",
             "okres_nazev": "Hradec Králové",
-            "obyv_2019": "163671"
+            "obyv_2019": "163671",
+            "zkratka":"HK"
         },
         {
             "okres_kod": "CZ0522",
             "okres_nazev": "Jičín",
-            "obyv_2019": "79782"
+            "obyv_2019": "79782",
+            "zkratka":"JC"
         },
         {
             "okres_kod": "CZ0523",
             "okres_nazev": "Náchod",
-            "obyv_2019": "110240"
+            "obyv_2019": "110240",
+            "zkratka":"NA"
         },
         {
             "okres_kod": "CZ0524",
             "okres_nazev": "Rychnov nad Kněžnou",
-            "obyv_2019": "79088"
+            "obyv_2019": "79088",
+            "zkratka":"RK"
         },
         {
             "okres_kod": "CZ0525",
             "okres_nazev": "Trutnov",
-            "obyv_2019": "118240"
+            "obyv_2019": "118240",
+            "zkratka":"TU"
         },
         {
             "okres_kod": "CZ0531",
             "okres_nazev": "Chrudim",
-            "obyv_2019": "104344"
+            "obyv_2019": "104344",
+            "zkratka":"CR"
         },
         {
             "okres_kod": "CZ0532",
             "okres_nazev": "Pardubice",
-            "obyv_2019": "173329"
+            "obyv_2019": "173329",
+            "zkratka":"PU"
         },
         {
             "okres_kod": "CZ0533",
             "okres_nazev": "Svitavy",
-            "obyv_2019": "104401"
+            "obyv_2019": "104401",
+            "zkratka":"SY"
         },
         {
             "okres_kod": "CZ0534",
             "okres_nazev": "Ústí nad Orlicí",
-            "obyv_2019": "138242"
+            "obyv_2019": "138242",
+            "zkratka":"UO"
         },
         {
             "okres_kod": "CZ0631",
             "okres_nazev": "Havlíčkův Brod",
-            "obyv_2019": "94732"
+            "obyv_2019": "94732",
+            "zkratka":"HB"
         },
         {
             "okres_kod": "CZ0632",
             "okres_nazev": "Jihlava",
-            "obyv_2019": "113153"
+            "obyv_2019": "113153",
+            "zkratka":"JI"
         },
         {
             "okres_kod": "CZ0633",
             "okres_nazev": "Pelhřimov",
-            "obyv_2019": "72226"
+            "obyv_2019": "72226",
+            "zkratka":"PE"
         },
         {
             "okres_kod": "CZ0634",
             "okres_nazev": "Třebíč",
-            "obyv_2019": "111069"
+            "obyv_2019": "111069",
+            "zkratka":"TR"
         },
         {
             "okres_kod": "CZ0635",
             "okres_nazev": "Žďár nad Sázavou",
-            "obyv_2019": "118094"
+            "obyv_2019": "118094",
+            "zkratka":"ZR"
         },
         {
             "okres_kod": "CZ0641",
             "okres_nazev": "Blansko",
-            "obyv_2019": "108801"
+            "obyv_2019": "108801",
+            "zkratka":"BK"
         },
         {
             "okres_kod": "CZ0642",
             "okres_nazev": "Brno-město",
-            "obyv_2019": "380681"
+            "obyv_2019": "380681",
+            "zkratka":"BM"
         },
         {
             "okres_kod": "CZ0643",
             "okres_nazev": "Brno-venkov",
-            "obyv_2019": "222370"
+            "obyv_2019": "222370",
+            "zkratka":"BI"
         },
         {
             "okres_kod": "CZ0644",
             "okres_nazev": "Břeclav",
-            "obyv_2019": "115906"
+            "obyv_2019": "115906",
+            "zkratka":"BV"
         },
         {
             "okres_kod": "CZ0645",
             "okres_nazev": "Hodonín",
-            "obyv_2019": "154160"
+            "obyv_2019": "154160",
+            "zkratka":"HO"
         },
         {
             "okres_kod": "CZ0646",
             "okres_nazev": "Vyškov",
-            "obyv_2019": "91645"
+            "obyv_2019": "91645",
+            "zkratka":"VY"
         },
         {
             "okres_kod": "CZ0647",
             "okres_nazev": "Znojmo",
-            "obyv_2019": "114104"
+            "obyv_2019": "114104",
+            "zkratka":"ZN"
         },
         {
             "okres_kod": "CZ0711",
             "okres_nazev": "Jeseník",
-            "obyv_2019": "38330"
+            "obyv_2019": "38330",
+            "zkratka":"JE"
         },
         {
             "okres_kod": "CZ0712",
             "okres_nazev": "Olomouc",
-            "obyv_2019": "234939"
+            "obyv_2019": "234939",
+            "zkratka":"OL"
         },
         {
             "okres_kod": "CZ0713",
             "okres_nazev": "Prostějov",
-            "obyv_2019": "108587"
+            "obyv_2019": "108587",
+            "zkratka":"PV"
         },
         {
             "okres_kod": "CZ0714",
             "okres_nazev": "Přerov",
-            "obyv_2019": "129925"
+            "obyv_2019": "129925",
+            "zkratka":"PR"
         },
         {
             "okres_kod": "CZ0715",
             "okres_nazev": "Šumperk",
-            "obyv_2019": "120711"
+            "obyv_2019": "120711",
+            "zkratka":"SU"
         },
         {
             "okres_kod": "CZ0721",
             "okres_nazev": "Kroměříž",
-            "obyv_2019": "105572"
+            "obyv_2019": "105572",
+            "zkratka":"KM"
         },
         {
             "okres_kod": "CZ0722",
             "okres_nazev": "Uherské Hradiště",
-            "obyv_2019": "142306"
+            "obyv_2019": "142306",
+            "zkratka":"UH"
         },
         {
             "okres_kod": "CZ0723",
             "okres_nazev": "Vsetín",
-            "obyv_2019": "143332"
+            "obyv_2019": "143332",
+            "zkratka":"VS"
         },
         {
             "okres_kod": "CZ0724",
             "okres_nazev": "Zlín",
-            "obyv_2019": "191711"
+            "obyv_2019": "191711",
+            "zkratka":"ZL"
         },
         {
             "okres_kod": "CZ0801",
             "okres_nazev": "Bruntál",
-            "obyv_2019": "92018"
+            "obyv_2019": "92018",
+            "zkratka":"BR"
         },
         {
             "okres_kod": "CZ0802",
             "okres_nazev": "Frýdek-Místek",
-            "obyv_2019": "214187"
+            "obyv_2019": "214187",
+            "zkratka":"FM"
         },
         {
             "okres_kod": "CZ0803",
             "okres_nazev": "Karviná",
-            "obyv_2019": "247887"
+            "obyv_2019": "247887",
+            "zkratka":"KA"
         },
         {
             "okres_kod": "CZ0804",
             "okres_nazev": "Nový Jičín",
-            "obyv_2019": "151680"
+            "obyv_2019": "151680",
+            "zkratka":"NJ"
         },
         {
             "okres_kod": "CZ0805",
             "okres_nazev": "Opava",
-            "obyv_2019": "176254"
+            "obyv_2019": "176254",
+            "zkratka":"OP"
         },
         {
             "okres_kod": "CZ0806",
             "okres_nazev": "Ostrava-město",
-            "obyv_2019": "321273"
+            "obyv_2019": "321273",
+            "zkratka":"OS"
         }
     ]
 }
